@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+       <table  border="1px" width="80%" cellspacing="0"/>
+        <tr>
+            <td>id</td>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>操作</td>
+        </tr>
+            <?php foreach($row as $row):?>
+        <tr>
+            <td><?php echo $row['id'];?></td>
+            <td><?php echo $row['username'];?></td>
+            <td><?php echo $row['password']?></td>
+            <td>
+                <a href="index.php?p=Admin&c=Admin&a=add">添加</a>
+                <a href="index.php?p=Admin&c=Admin&a=delete&id=<?php echo $row['id'];?>">删除</a>
+            </td>
+        </tr>
+            <?php endforeach;?>
+    </table>
+
+</body>
+</html>

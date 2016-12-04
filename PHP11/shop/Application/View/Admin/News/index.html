@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<a href="index.php?p=Admin&c=News&a=add">添加一条新闻</a>
+<form action="index.php?p=Admin&c=News&a=add" method="post">
+    <table border="1px" cellspacing="0px" width="80%">
+        <tr>
+            <th>ID</th>
+            <th>标题</th>
+            <th>内容</th>
+            <th>添加时间</th>
+            <th>更新时间</th>
+            <th>操作</th>
+        </tr>
+        <?php foreach($rows as $rows):?>
+        <tr>
+            <td><?php echo $rows['id']?></td>
+            <td><?php echo $rows['title']?></td>
+            <td><?php echo $rows['content']?></td>
+            <td><?php echo date('Y-m-d H:i:s',$rows['add_time'])?></td>
+            <td><?php echo date('Y-m-d H:i:s',$rows['update_time'])?></td>
+            <td>
+                <a href="index.php?p=Admin&c=News&a=add&id=<?php echo $rows['id']?>">添加</a>
+                <a href="index.php?p=Admin&c=News&a=delete&id=<?php echo $rows['id']?>">删除</a>
+            </td>
+        </tr>
+        <?php endforeach;?>
+    </table>
+</form>
+</body>
+</html>

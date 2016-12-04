@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="post" action="index.php?p=Admin&c=Brand&a=edit">
+    <input type="hidden" name="id" value="<?php echo $id?>">
+    品牌名称: <input type="text" name="name" value="<?php echo $name?>"/><br/>
+    品牌网址:<input type="text" name="url" value="<?php echo $url?>"/><br/>
+    品牌简介<input type="text" name="intro"  value="<?php echo $intro?>"/><br/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>
